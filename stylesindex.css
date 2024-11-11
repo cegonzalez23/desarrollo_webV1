@@ -1,7 +1,8 @@
-@import url(fontawesome-all.min.css);
-@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400';
+/* Importación de fuentes externas */
+@import url(fontawesome-all.min.css); /* Carga de iconos de FontAwesome */
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400'; /* Carga de la fuente Source Sans Pro */
 
-/* Reseteo de estilos básicos */
+/* Reseteo de estilos básicos para evitar inconsistencias en diferentes navegadores */
 html, body, div, span, h1, h2, h3, h4, h5, h6, 
 footer, header, nav, section {
 	margin: 0;
@@ -10,234 +11,261 @@ footer, header, nav, section {
 	font-size: 100%;
 }
 
+/* Asegura que ciertos elementos sean de tipo bloque */
 footer, header, nav, section {
 	display: block;
 }
 
-/* Configuración de viewport */
+/* Configuración de viewport para navegadores antiguos de Internet Explorer */
 @-ms-viewport {
 	width: device-width;
 }
 
+/* Estilos de la página */
 body {
-	-ms-overflow-style: scrollbar;
+	-ms-overflow-style: scrollbar; /* Aplica estilo para los desplazamientos en IE */
 }
 
+/* Configura el box-sizing para todos los elementos */
 html {
 	box-sizing: border-box;
 }
 
 *, *:before, *:after {
-	box-sizing: inherit;
+	box-sizing: inherit; /* Hace que todos los elementos hereden el box-sizing de html */
 }
 
-/* Estilo del cuerpo */
+/* Estilos globales para el cuerpo de la página */
 body {
-	background-color: #935d8c;
-	background-image: url("images/overlay.png"), linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-	color: rgba(255, 255, 255, 0.65);
-	font-family: "Source Sans Pro", Helvetica, sans-serif;
-	font-size: 17pt;
-	font-weight: 300;
-	line-height: 1.65;
+	background-color: #935d8c; /* Color de fondo principal */
+	background-image: url("images/overlay.png"), linear-gradient(45deg, #e37682 15%, #5f4d93 85%); /* Imagen de fondo y gradiente */
+	color: rgba(255, 255, 255, 0.65); /* Color del texto con opacidad */
+	font-family: "Source Sans Pro", Helvetica, sans-serif; /* Tipografía */
+	font-size: 17pt; /* Tamaño de fuente */
+	font-weight: 300; /* Peso de la fuente */
+	line-height: 1.65; /* Altura de línea */
 }
 
-/* Ajustes de fuente para diferentes tamaños de pantalla */
+/* Media queries para ajustar el tamaño de la fuente en pantallas grandes */
 @media screen and (max-width: 1680px) {
 	body, input, select, textarea {
-		font-size: 14pt;
+		font-size: 14pt; /* Ajuste de tamaño para pantallas con ancho <= 1680px */
 	}
 }
 
 @media screen and (max-width: 1280px) {
 	body, input, select, textarea {
-		font-size: 12pt;
+		font-size: 12pt; /* Ajuste de tamaño para pantallas con ancho <= 1280px */
 	}
 }
 
-/* Tipografía */
+/* Estilos de tipografía para los encabezados */
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 300;
-	line-height: 1.5;
-	margin: 0 0 0.7em 0;
-	letter-spacing: -0.025em;
-	color: #ffffff;
-}
-p{
-	padding: 1em;
+	font-weight: 300; /* Peso de la fuente */
+	line-height: 1.5; /* Altura de línea */
+	margin: 0 0 0.7em 0; /* Márgenes */
+	letter-spacing: -0.025em; /* Espaciado entre letras */
+	color: #ffffff; /* Color blanco para los encabezados */
 }
 
-h1 { font-size: 2.5em; line-height: 1.2; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.25em; }
-h4 { font-size: 1.1em; }
-h5 { font-size: 0.9em; }
-h6 { font-size: 0.7em; }
+p {
+	padding: 1em; /* Espaciado interno en los párrafos */
+}
 
+h1 { font-size: 2.5em; line-height: 1.2; } /* Tamaño de fuente y altura de línea para h1 */
+h2 { font-size: 1.5em; } /* Tamaño de fuente para h2 */
+h3 { font-size: 1.25em; } /* Tamaño de fuente para h3 */
+h4 { font-size: 1.1em; } /* Tamaño de fuente para h4 */
+h5 { font-size: 0.9em; } /* Tamaño de fuente para h5 */
+h6 { font-size: 0.7em; } /* Tamaño de fuente para h6 */
+
+/* Ajustes específicos para pantallas pequeñas (hasta 736px) */
 @media screen and (max-width: 736px) {
-	h1 { font-size: 2em; }
+	h1 { font-size: 2em; } /* Reducir el tamaño de h1 en pantallas más pequeñas */
 }
 
-/* Enlaces */
+/* Estilos para los enlaces al pasar el cursor sobre ellos */
 a:hover {
-	color: #4327b4;
+	color: #4327b4; /* Cambio de color al pasar el ratón */
 }
 
-/* Sección/Artículo */
+/* Estilo para secciones y artículos especiales */
 section.special, article.special {
-	text-align: center;
+	text-align: center; /* Centra el texto de estas secciones */
 }
 
+/* Estilos específicos para el encabezado principal */
 header.major h2 {
-	font-size: 2em;
+	font-size: 2em; /* Tamaño de la fuente */
 }
 
 header.major h2:after {
-	display: block;
-	content: '';
-	width: 3.25em;
-	height: 2px;
-	margin: 0.7em auto 1em auto;
-	border-radius: 2px;
+	display: block; /* Hace que el pseudo-elemento se muestre */
+	content: ''; /* No tiene contenido textual, solo una línea */
+	width: 3.25em; /* Ancho de la línea */
+	height: 2px; /* Altura de la línea */
+	margin: 0.7em auto 1em auto; /* Espaciado alrededor de la línea */
+	border-radius: 2px; /* Redondeo de los bordes de la línea */
 }
 
+/* Estilos para listas dentro de .statistics */
 @media screen and (max-width: 980px) {
 	.statistics li strong, .statistics li b {
-		font-size: 1.5em;
+		font-size: 1.5em; /* Ajuste de tamaño de texto en pantallas más pequeñas */
 	}
 }
 
-/* Spotlight para la imagen circular */
+/* Estilos para las imágenes de presentación en formato Spotlight */
 .spotlight {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 0 0 2em 0;
+	display: flex; /* Flexbox para alinear los elementos */
+	align-items: center; /* Alineación vertical */
+	justify-content: center; /* Alineación horizontal */
+	margin: 0 0 2em 0; /* Márgenes inferiores */
 }
 
 .spotlight .image {
-	display: inline-block;
-	margin: 0 auto;
-	padding: 0.65em;
-	border-radius: 50%;
-	border: solid 1px;
-	max-width: 100%;
-	height: auto;
-	box-sizing: border-box;
+	display: inline-block; /* Hacer que la imagen sea un bloque en línea */
+	margin: 0 auto; /* Centrado horizontal */
+	padding: 0.65em; /* Espaciado interno */
+	border-radius: 50%; /* Redondear la imagen */
+	border: solid 1px; /* Borde de la imagen */
+	max-width: 100%; /* Max ancho al 100% */
+	height: auto; /* Altura automática */
+	box-sizing: border-box; /* Incluir borde en el cálculo del tamaño */
 }
 
 .spotlight .image img {
-	display: block;
-	border-radius: 50%;
-	width: 100%;
-	height: auto;
-	object-fit: cover;
+	display: block; /* Hacer que la imagen sea un bloque */
+	border-radius: 50%; /* Redondeo de la imagen */
+	width: 100%; /* Ancho completo */
+	height: auto; /* Altura automática */
+	object-fit: cover; /* Ajustar la imagen al contenedor sin distorsionar */
 }
 
+/* Estilos para pantallas pequeñas donde la imagen en Spotlight cambia de dirección */
 @media screen and (max-width: 980px) {
 	.spotlight {
-		flex-direction: column-reverse;
-		text-align: center;
+		flex-direction: column-reverse; /* Cambia la dirección de los elementos a columna en pantallas pequeñas */
+		text-align: center; /* Centra el texto */
 	}
 }
 
-/* Estilo para el nav */
+/* Estilos para el menú de navegación fijo */
 #nav {
-	background-color: #f7f7f7;
-	color: #636363;
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-	z-index: 1000;
-	padding: 1em;
-	border-top-left-radius: 0.25em;
-	border-top-right-radius: 0.25em;
-	text-align: center;
+	background-color: #f7f7f7; /* Fondo del menú */
+	color: #636363; /* Color del texto */
+	position: fixed; /* Fija el menú en la parte superior */
+	width: 100%; /* Ancho completo */
+	top: 0; /* Pegado a la parte superior */
+	left: 0; /* Pegado al borde izquierdo */
+	z-index: 1000; /* Asegura que el menú esté encima de otros elementos */
+	padding: 1em; /* Espaciado interno */
+	border-top-left-radius: 0.25em; /* Radio superior izquierdo */
+	border-top-right-radius: 0.20em; /* Radio superior derecho */
+	text-align: right; /* Alinea los elementos del menú a la derecha */
 }
 
+.hamburger {
+	font-size: 24px; /* Tamaño del icono hamburguesa */
+	cursor: pointer; /* Cambia el cursor cuando pasa sobre el icono */
+	display: none; /* Oculta el menú hamburguesa en pantallas grandes */
+	position: absolute; 
+	right: 20px; 
+	top: 0px; /* Ubicación desde la parte superior */
+}
+
+/* Estilos de los elementos de la lista en el menú de navegación */
 #nav ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	display: flex;
-	justify-content: center;
+	display: flex; /* Uso flexbox para el menú horizontal */
+	justify-content: center; /* Centra los elementos en el eje horizontal */
 }
 
 #nav ul li {
-	margin: 0 0.35em;
+	margin: 0 0.35em; /* Espaciado entre los elementos del menú */
 }
 
 #nav ul li a {
-	display: inline-block;
-	height: 2.25em;
-	line-height: 2.25em;
-	padding: 0 3.25em;
-	border-radius: 8px;
-	box-shadow: inset 0 0 0 1px transparent;
-	color: #636363;
-	text-decoration: none;
+	display: inline-block; /* Hace que los enlaces sean bloques en línea */
+	height: 2.25em; /* Altura del enlace */
+	line-height: 2.25em; /* Alineación del texto vertical */
+	padding: 0 3.25em; /* Espaciado horizontal */
+	border-radius: 8px; /* Bordes redondeados */
+	box-shadow: inset 0 0 0 1px transparent; /* Sombra interna invisible */
+	color: #636363; /* Color del texto */
+	text-decoration: none; /* Elimina el subrayado */
 }
 
-@media screen and (max-width: 400px) {
-	#nav {
-		padding: 8px;
+/* Estilos para el menú en dispositivos móviles */
+@media (max-width: 768px) {
+	.hamburger {
+		display: block; /* Muestra el menú hamburguesa */
 	}
-
+	
 	#nav ul {
-		align-items: center;
+		flex-direction: column; /* Cambia la dirección del menú a columna */
+		position: absolute;
+		background-color: #f7f7f7; /* Fondo de color claro */
+		width: 100%; /* Ancho completo */
+		top: 60px; 
+		left: 0;
+		padding: 1em;
+		display: none; /* Oculto inicialmente */
 	}
 
 	#nav ul li {
-		margin: 8px 0;
+		margin: 0.5em ; /* Espaciado entre los elementos */
 	}
 
-	#nav ul li a {
-		font-size: 11px;
+	#nav ul.active {
+		display: flex; /* Muestra el menú cuando está activo */
 	}
 }
 
-/* Header */
+/* Estilo para el header */
 #header {
 	padding: 2em;
 	text-align: center;
-	overflow: hidden; 
+	overflow: hidden; /* Oculta cualquier desbordamiento */
 }
 
 #header .spotlight .image {
-	width: 150px; 
-	height: 150px;
+	width: 150px; /* Tamaño de la imagen */
+	height: 150px; /* Tamaño de la imagen */
 }
 
-/* Main */
+/* Estilos para el main */
 #main {
-	background-color: #ffffff;
-	color: #636363;
-	border-radius: 0.25em;
-	margin: 1em;
-	padding: 5em;
+	background-color: #ffffff; /* Fondo blanco para la sección principal */
+	color: #636363; /* Color de texto */
+	border-radius: 0.25em; /* Bordes redondeados */
+	margin: 1em; /* Márgenes */
+	padding: 5em; /* Espaciado interno */
 }
 
 #main h1, #main h2, #main h5, #main h6 {
-	color: #636363;
+	color: #636363; /* Color de texto */
 }
 
 #main header.major h2:after {
-	background-color: #dddddd;
-	background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+	background-color: #dddddd; /* Color de fondo */
+	background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0); /* Gradiente de fondo */
 }
 
 #main .spotlight .image {
-	border-color: #dddddd;
+	border-color: #dddddd; /* Color del borde */
 }
 
 #main > .main {
-	border-top: solid 1px #dddddd;
+	border-top: solid 1px #dddddd; /* Línea superior */
 }
 
+/* Media query para ajustar el contenido principal en pantallas pequeñas */
 @media screen and (max-width: 736px) {
 	#main > .main {
-		padding: 3em 2em 1em 2em;
+		padding: 3em 2em 1em 2em; /* Ajustar el espaciado en pantallas pequeñas */
 	}
 
 	#main > .main > .image.main:first-child {
@@ -246,25 +274,26 @@ header.major h2:after {
 	}
 }
 
+/* Estilos para encabezados h3 y h4 en general */
 h3 {
 	margin: 3%;
-	color: black;
-	font-weight: bold;
+	color: black; /* Color negro */
+	font-weight: bold; /* Negrita */
 }
 
 h4 {
 	margin: 1%;
-	color: black;
-	font-weight: bold;
-	list-style-type: circle;
+	color: black; /* Color negro */
+	font-weight: bold; /* Negrita */
+	list-style-type: circle; /* Estilo de lista en círculos */
 }
 
 /* Footer */
 #footer {
 	padding: 1em;
-	background-color: #f7f7f7;
-	border-top: solid 1px #dddddd;
-	text-align: center;
+	background-color: #f7f7f7; /* Fondo claro */
+	border-top: solid 1px #dddddd; /* Línea superior */
+	text-align: center; /* Centra el texto */
 }
 
 #footer h2 {
@@ -278,10 +307,11 @@ h4 {
 	color: #636363;
 }
 
+/* Estilos para los iconos sociales en el pie de página */
 .social-icons {
-	display: flex;
-	justify-content: center;
-	gap: 1em;
+	display: flex; /* Flexbox para los iconos */
+	justify-content: center; /* Centra los iconos */
+	gap: 1em; /* Espaciado entre los iconos */
 }
 
 .social-icons a {
@@ -291,47 +321,49 @@ h4 {
 }
 
 .social-icons img {
-	max-width: 100%;
+	max-width: 100%; /* Ajusta el tamaño máximo de las imágenes */
 	max-height: 100%;
 	display: block;
 }
 
+/* Ajustes para el pie de página en pantallas más pequeñas */
 @media screen and (max-width: 980px) {
 	#footer {
-		padding: 3em 2em 1em 2em;
+		padding: 3em 2em 1em 2em; /* Ajuste de espaciado */
 	}
 }
 
 @media screen and (max-width: 736px) {
 	#footer {
-		padding: 2em 1.5em 1em 1.5em;
+		padding: 2em 1.5em 1em 1.5em; /* Ajuste de espaciado */
 	}
 
 	#footer h2 {
-		font-size: 1.25em;
+		font-size: 1.25em; /* Tamaño más grande de h2 */
 	}
 
 	.social-icons a {
-		width: 2em;
+		width: 2em; /* Ajuste del tamaño de los iconos */
 		height: 2em;
 	}
 }
 
-/* Wrapper */
+/* Wrapper principal */
 #wrapper {
-	width: 64em;
-	max-width: calc(100% - 4em);
-	margin: 0 auto;
+	width: 64em; /* Ancho fijo para el contenido */
+	max-width: calc(100% - 4em); /* Ancho máximo según el contenedor */
+	margin: 0 auto; /* Centrado del contenido */
 }
 
+/* Ajustes para pantallas pequeñas */
 @media screen and (max-width: 480px) {
 	#wrapper {
-		max-width: calc(100% - 2em);
+		max-width: calc(100% - 2em); /* Reduce el ancho en pantallas pequeñas */
 	}
 }
 
 @media screen and (max-width: 360px) {
 	#wrapper {
-		max-width: 100%;
+		max-width: 100%; /* Ancho completo para pantallas más pequeñas */
 	}
 }
