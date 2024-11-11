@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesindex.css">
-            <!-- Nav -->
+            <!-- menú de navegación -->
             <nav id="nav">
-                <ul>
-                    <li><a href="index.html" class="active">Inicio</a></li>
+                <!-- agrego menú hamburguesa para la navegacion de celulares -->
+                <div class="hamburger" id="hamburger">&#9776;</div>
+                <ul id="menu" class="hidden">
+                    <li><a href="index.html" class="active">Inicio</a></li>  <!-- se linkea cada sección para que se abra el contenido en la página -->
                     <li><a href="portfolio.html">Portafolio</a></li>
                     <li><a href="resume.html">Currículum</a></li>
                     <li><a href="contact.html">Contacto</a></li>
@@ -16,20 +18,20 @@
     <title>Celeste González - Data Scientist</title>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header con logo de presentación -->
     <header id="header">
         <div class="header-content">
             <p>Especializada en transformar datos complejos en insights valiosos.</p>
         </div>
     </header>
 
-    <!-- Wrapper -->
+    <!-- desarrollo el contenedor principal -->
     <div id="wrapper">
 
         <!-- Main -->
         <div id="main">
 
-            <!-- Introduction -->
+            <!-- Sección principal, introducción -->
             <section id="intro" class="main">
                 <div class="spotlight">
                     <div class="content">
@@ -42,10 +44,10 @@
                     <span class="image"><img src="Yo.jpeg" alt="Foto presentación" width="50%" /></span>
                 </div>
             </section>
-            <!-- About Me -->
+            <!-- Sección about me -->
             <section id="about-me" class="main special">
                 <header class="major">
-                    <h2>Sobre Mí</h2>
+                    <h2>Sobre Mí</h2> <!-- título de la sección-->
                 </header>
                 <p>Lideré proyectos claves de análisis de datos y modelado predictivo. Con una formación en Actuaría y actualmente en desarrollo de software, combino una profunda comprensión matemática con habilidades técnicas avanzadas. Mi pasión por la resolución de problemas y mi enfoque orientado a resultados me permiten contribuir eficazmente a equipos multidisciplinarios y enfrentar desafíos complejos en el ámbito de la tecnología y los datos.</p>
                 
@@ -57,16 +59,17 @@
                 <p>Formación en programación, desarrollo web y backend.</p>
             </section>
 
-            <!-- Objective -->
+            <!-- Sección de objetivo profesional -->
             <section id="objective" class="main special">
                 <header class="major">
                     <h2>Objetivo Profesional</h2>
                 </header>
+            <!-- Descripción del objetivo profesional -->
                 <p>Mi objetivo profesional es integrar mis conocimientos en análisis de datos y desarrollo de software para crear soluciones innovadoras que optimicen procesos empresariales y aporten valor tangible. Creo firmemente en la importancia de una toma de decisiones basada en datos y en la capacidad de la tecnología para transformar la información en estrategias efectivas.</p>
             </section>
         </div>
     </div>
-        <!-- Footer -->
+        <!-- Footer con enlaces a redes sociales -->
         <footer id="footer">
             <section>
                 <h2>Redes Sociales</h2>
@@ -80,5 +83,11 @@
                 <p>Derechos Reservados. &copy; 2024</p>
             </section>
         </footer>
+        <!-- Agrego boton to top para volver al inicio-->
+        <button id="scrollToTop" style="display: none; position: fixed; bottom: 20px; right: 20px; background: #321939; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">
+            ↑ Volver Arriba
+        </button>
+        <!-- Script para el funcionamiento del botón Scroll to Top -->
+        <script src="index.js"></script>
 </body>
 </html>
