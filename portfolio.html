@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesportfolio.css"> <!-- Asegúrate de usar el mismo archivo CSS -->
+    <link rel="stylesheet" href="stylesportfolio.css"> 
     <title> Portafolio</title>
 </head>
 <body>
@@ -16,9 +16,10 @@
 
     <!-- Navigation -->
     <nav id="nav">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="portfolio.html" class="active">Portafolio</a></li>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <ul id="menu" class="hidden">
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="portfolio.html">Portafolio</a></li>
             <li><a href="resume.html">Currículum</a></li>
             <li><a href="contact.html">Contacto</a></li>
         </ul>
@@ -85,7 +86,9 @@
             <p>Derechos Reservados. &copy; 2024</p>
         </section>
     </footer>
+    <button id="scrollToTop" style="display: none; position: fixed; bottom: 20px; right: 20px; background: #321939; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">
+        ↑ Volver Arriba
+    </button>
+    <script src="index.js"></script>
 </body>
 </html>
-
-
